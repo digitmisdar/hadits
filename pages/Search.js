@@ -21,12 +21,14 @@ export default function Search() {
     }} />
     {
         hits.length === 0 ? type : hits.map(e => {
-            return (<div>
+            return (<li key={e.id}>
                 <h2>{e.judul}</h2>
                 <b>{e.content}</b>
                 <p>{e.desc}</p>
                 <i>{e.rawi}</i>
-            </div>)
+                <br />
+                <small>{e.entityId}</small>
+            </li>)
         })
     }
 </div>
