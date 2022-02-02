@@ -7,7 +7,7 @@ export default function Search() {
     const [type, setType] = useState()
     
     return (
-<div>
+<div className="">
     <input type="text" onChange={async e => {
         const que = e.target.value
         if (que.length > 2) {
@@ -16,19 +16,30 @@ export default function Search() {
             await setHits(res.data)
             setTimeout(function() {
                 setType('tidak ditemukan')
-            }, 800);
+            }, 1000);
         }
-    }} />
+    }} className="input" placeholder="Ketikkan sesuatu..." />
     {
         hits.length === 0 ? type : hits.map(e => {
-            return (<li key={e.entityId}>
-                <h2>{e.judul}</h2>
-                <b>{e.content}</b>
-                <p>{e.desc}</p>
-                <i>{e.rawi}</i>
+            return (
+            <div key={e.entityId} className="card">
+              <div className="card-content">
+                <p className="title">{e.judul}</p>
                 <br />
-                <small>{e.entityId}</small>
-            </li>)
+                <p className="subtitle">{e.content}</p>
+                <p className="">{e.desc}</p>
+                <i>H.R: {e.rawi}</i>
+              </div>
+              <footer className="card-footer">
+                <p className="card-footer-item">
+                  <span>Suka</span>
+                </p>
+                <p className="card-footer-item">
+                  <span>Perbaiki</span>
+                </p>
+              </footer>
+            </div>
+            )
         })
     }
 </div>
