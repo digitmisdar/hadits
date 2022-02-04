@@ -1,3 +1,3 @@
-##Dokumentasi
+## Dokumentasi
 
-Seperti yang kalian lihat, diatas adalah sumber kode dari aplikasi ini, kalian bisa menyalin, membagikan 
+Kalian bisa mengedit sumber kode diatas, jika kamu punya saran atau masukan
