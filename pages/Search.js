@@ -4,8 +4,9 @@ import axios from 'axios'
 
 export default function Search() {
     const [hits, setHits] = useState([])
-    const [type, setType] = useState()
+    const [type, setType] = useState('Selamat Datang!//• Silahkan cari nama, judul, ataupun kata yang berkaitan dengan hadits yang ingin kamu cari di kolom pencarian diatas.//• Kamu juga bisa membantu aku dalam membangun projek ini dengan cara berdonasi dengan mengklik ikon merah di bawah.//• Jika kamu ingin mengetahui lebih banyak tentang situs ini kamu bisa ')
     
+    let text = type.split("//")
     return (
 <div className="">
     <input type="text" onChange={async e => {
@@ -18,9 +19,23 @@ export default function Search() {
                 setType('tidak ditemukan')
             }, 1000);
         }
-    }} className="input" placeholder="Ketikkan sesuatu..." />
+    }} className="input" placeholder="Ketikkan sesuatu...  eg: 'bukhari'" />
     {
-        hits.length === 0 ? type : hits.map(e => {
+        hits.length === 0 ? 
+        
+        <div className="text">
+            <div className="txt1">{text[0]}</div>
+            <div className="txt2">{text[1]}</div>
+            <div className="txt3">{text[2]}</div>
+            <div className="txt3">{text[3]}
+            { text[3] ?
+                <a href="https://github.com/digitmisdar/hadits">klik disini.</a>
+                :null
+            }
+            </div>
+        </div> 
+        
+        : hits.map(e => {
             return (
             <div key={e.entityId} className="card">
               <div className="card-content">
@@ -42,6 +57,10 @@ export default function Search() {
             )
         })
     }
+    <div className="sticky-footer">
+        <a href="https://trakteer.id/misdar" target="_blank"><img className="trakteer" src="https://cdn.trakteer.id/images/embed/trbtn-red-7.png" /></a>
+        <div></div>
+    </div>
 </div>
     )
 }
