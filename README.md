@@ -3,6 +3,10 @@
 Kalian bisa mengedit sumber kode diatas, jika kamu punya saran atau masukan
 kamu bisa melakukan pull request.
 
+## Tentang
+
+- Situs ini kubuat untuk pelajar yang mungkin sering disuruh nyari hadits, seriusan ini projek gua yang mungkin bakal berguna karna fitur utamanya, kamu bisa tempel bahasa arab disini dan akan muncul artinya beserta dengan perawi haditsnya sekaligus, keren gak? :) 
+
 ## PR
 
 - Biaya upgrade kuota database
