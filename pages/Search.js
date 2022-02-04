@@ -58,7 +58,7 @@ export default function Search() {
         })
     }
     <div className="sticky-footer">
-        <a href="https://trakteer.id/misdar" target="_blank"><img className="trakteer" src="https://cdn.trakteer.id/images/embed/trbtn-red-7.png" /></a>
+        <a href="https://trakteer.id/misdar" target="_blank"><img className="trakteer" rel="noreferrer" src="https://cdn.trakteer.id/images/embed/trbtn-red-7.png" /></a>
         <div></div>
     </div>
 </div>
