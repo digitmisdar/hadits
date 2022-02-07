@@ -14,7 +14,7 @@ let schema = new Schema( Thingy,
         judul: { type: 'string', textSearch: true },
         content: { type: 'string', textSearch: true },
         desc: { type: 'string', textSearch: true },
-        rawi: { type: 'string' }
+        rawi: { type: 'string', textSearch: true }
     },{
         dataStructure: 'JSON'
     }
@@ -36,7 +36,7 @@ export async function search(q) {
         .where('judul').match(q)
         .or('content').match(q)
         .or('desc').match(q)
-        .or('rawi').eq(q)
+        .or('rawi').match(q)
         .return.all()
     return result
 }
