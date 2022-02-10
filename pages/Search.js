@@ -32,7 +32,7 @@ export default function Search() {
                 <div className="txt3">{text[2]}</div>
                 <div className="txt3">{text[3]}
                 { text[3] &&
-                    <a class="source" href="https://github.com/digitmisdar/hadits">klik disini.</a>
+                    <a className="source" href="https://github.com/digitmisdar/hadits">klik disini.</a>
                 }
                 </div>
             </div>
@@ -40,8 +40,8 @@ export default function Search() {
         
         : hits.map(e => {
             return (
-        <div>
-            <div key={e.entityId} className="card">
+        <div key={entityId}>
+            <div className="card">
               <div className="card-content">
                 <p className="title">{e.judul}</p>
                 <br />
