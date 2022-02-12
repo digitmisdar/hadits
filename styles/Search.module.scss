@@ -40,12 +40,59 @@
     }
 }
 
-.statestatus {
+.statestatus,
+.stateloading {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: Monospace;
     text-align: center;
     height: 80vh;
+}
+
+.stateloading {
+    
+    div {
+        background-color: black;
+        margin: 0 .4rem;
+        border-radius: .1rem;
+    }
+    
+    :nth-child(1) {
+        width: 10px;height: 10px;
+        animation: popped1 1s infinite;
+    }
+    
+    :nth-child(2) {
+        width: 10px;height: 10px;
+        animation: popped2 1s infinite;
+    }
+    
+    :nth-child(3) {
+        width: 10px;height: 10px;
+        animation: popped3 1s infinite;
+    }
+    
+}
+
+@keyframes popped1 {
+    0% {margin-top: 0;}
+    15% {margin-top: -10px;}
+    30% {margin-top: 0px;}
+    100% {margin-top: 0px;}
+}
+
+@keyframes popped2 {
+    31% {margin-top: 0px;}
+    45% {margin-top: -10px;}
+    60% {margin-top: 0px;}
+    100% {margin-top: 0px;}
+}
+
+@keyframes popped3 {
+    61% {margin-top: 0px;}
+    75% {margin-top: -10px;}
+    100% {margin-top: 0px;}
 }
 
 .cardwrapper {

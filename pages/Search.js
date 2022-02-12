@@ -12,12 +12,15 @@ export default function Search() {
     useEffect(() => {
         async function fetchData() {
             if (type.length > 2) {
-                setStat('tunggu...')
+                setStat('');setLoading(true)
                 const res = await axios.get('/api/search?q='+ type)
                 await setHits(res.data)
                 setTimeout(function() {
                     setStat('tidak ditemukan :(')
+                    setLoading(false)
                 }, 800);
+            } else {
+                setStat('')
             }
         }
         fetchData()
@@ -46,6 +49,9 @@ export default function Search() {
         
         <p className={loading ? css.stateloading : css.statestatus}>
             {stat}
+            <div></div>
+            <div></div>
+            <div></div>
         </p> 
         
         : hits.map(e => {
