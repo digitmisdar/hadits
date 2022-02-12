@@ -19,13 +19,13 @@ Adios
 
 ## PR
 
-- Biaya upgrade kuota database
+- Upgrade kuota database
 - Laptop baru?, supaya programming lebih efisien
-- Pengguna situs tetap
-- Bentuk tim
+- Pengguna tetap
+- Kurangnya kontributor
 
 # Selesai
 
 - Kemauan, niat
 - Perangkat untuk programming (meskipun cuman pake hp kentang :v)
-- Rilis versi Alpha
+- Rilis versi stabil
