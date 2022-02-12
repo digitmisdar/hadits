@@ -1,7 +1,7 @@
 ## Dokumentasi
 
 Kalian bisa mengedit sumber kode diatas, jika kamu punya saran atau masukan
-kamu bisa melakukan pull request.
+kamu bisa tarik issues.
 
 - stabil di branch optimized 😆
 - gagal di branch beta 😭
