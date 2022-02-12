@@ -1,4 +1,4 @@
-8## Dokumentasi
+## Dokumentasi
 
 Kalian bisa mengedit sumber kode diatas, jika kamu punya saran atau masukan
 kamu bisa tarik issues.
