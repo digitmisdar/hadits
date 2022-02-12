@@ -1,4 +1,4 @@
-## Dokumentasi
+8## Dokumentasi
 
 Kalian bisa mengedit sumber kode diatas, jika kamu punya saran atau masukan
 kamu bisa tarik issues.
@@ -12,7 +12,6 @@ kamu bisa tarik issues.
 
 - Situs ini kubuat untuk pelajar yang mungkin sering disuruh nyari hadits, seriusan ini projek gua yang mungkin bakal berguna karna fitur utamanya, kamu bisa tempel bahasa arab disini dan akan muncul artinya beserta dengan perawi haditsnya sekaligus, keren gak? :) 
 - Mungkin kamu bakalan nemuin banyak error, wajar lah ya ;) sebab gua masih nyimpen datanya secara gratis, jadinya banyak keterbatasan pada aplikasi ini
-- Intinya ayo! yang punya duit lebih, dapat pahala banyak, rejekinya lancar aamiin
 - Pengen donasi, kunjungi https://trakteer.id/misdar/tip
 
 Adios
