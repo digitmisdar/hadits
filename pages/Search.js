@@ -1,12 +1,27 @@
 //pages/Search.js
 import css from '../styles/Search.module.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export default function Search() {
     const [hits, setHits] = useState([])
     const [type, setType] = useState()
+    const [stat, setStat] = useState()
     const [loading, setLoading] = useState(false)
+    
+    useEffect(() => {
+        async function fetchData() {
+            if (type.length > 2) {
+                setStat('tunggu...')
+                const res = await axios.get('/api/search?q='+ type)
+                await setHits(res.data)
+                setTimeout(function() {
+                    setStat('tidak ditemukan :(')
+                }, 800);
+            }
+        }
+        fetchData()
+    }, [type])
     
     return (
 <div>
@@ -14,18 +29,10 @@ export default function Search() {
     {/*SEARCHBAR*/}
     <div className={css.searchbox} >
         <input type="text" onChange={async e => {
-        const que = e.target.value
-        if (que.length > 2) {
-            setType('tunggu...')
-            const res = await axios.get('/api/search?q='+ que)
-            await setHits(res.data)
-            setTimeout(function() {
-                setType('tidak ditemukan :(')
-            }, 800);
-        }
+        setType(e.target.value)
     }}
       placeholder="ketikkan sesuatu..."
-      className={css.searchbar} />
+      className={css.searchbar} value={type}/>
       
         <div className={css.searchicon}>
             <div></div>
@@ -38,17 +45,18 @@ export default function Search() {
         hits.length === 0 ? 
         
         <p className={loading ? css.stateloading : css.statestatus}>
-            {type}
+            {stat}
         </p> 
         
         : hits.map(e => {
             return (
             <div key={e.entityId}
               className={css.cardwrapper}>
-                <h2>{e.judul}</h2>
-                <b>{e.content}</b>
+                <h3>{e.judul}</h3>
+                <p className={css.cardcontent}>{e.content}</p>
                 <p>{e.desc}</p>
-                <i>{e.rawi}</i>
+                <i onClick={_ => setType(e.rawi)}
+                   className={css.cardauthor}>{e.rawi}</i>
                 <br />
             </div>)
         })
