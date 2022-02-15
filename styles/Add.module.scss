@@ -1,0 +1,75 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    font-family: Monospace;
+    align-items: center;
+    
+    .title {
+        text-align: center;
+    }
+}
+
+.input {
+    width: 90vw;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px 10px;
+    outline: none;
+}
+
+.hdscontent {
+    height: 8rem;
+}
+
+.button {
+    width: 90vw;
+    margin-top: .5rem;
+    padding: .8rem 0;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 999px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 90vw;
+
+    .tag {
+        box-sizing: border-box;
+        border: 1px solid black;
+        padding: 10px 10px;
+        outline: none;
+    }
+    
+    .addtag {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        border-radius: .1rem;
+        padding: 10px;outline: none;
+    }
+}
+
+.grouptags {
+    display: flex;
+    align-items: left;
+    width: 90vw;
+    margin-top: 10px;
+    overflow: auto;
+    
+    .tagitem {
+        margin-right: 5px;
+    }
+}

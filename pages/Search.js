@@ -8,17 +8,24 @@ export default function Search() {
     const [type, setType] = useState()
     const [stat, setStat] = useState()
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
     
     useEffect(() => {
         async function fetchData() {
             if (type.length > 2) {
-                setStat('');setLoading(true)
-                const res = await axios.get('/api/search?q='+ type)
-                await setHits(res.data)
-                setTimeout(function() {
-                    setStat('tidak ditemukan :(')
-                    setLoading(false)
-                }, 800);
+                setStat('');setLoading(true);setError(false)
+                axios.get('/api/search?q='+ type)
+                 .then(res => {
+                    setHits(res.data)
+                    setTimeout(function() {
+                        setStat('tidak ditemukan :(')
+                        setLoading(false)
+                    }, 800)
+                 })
+                 .catch(err => {
+                    setLoading(false);setError(true)
+                    setStat("Koneksi Menuju Database Error :(), Segera refresh halaman. Jika masalah masih berlanjut,  silahkan DM admin di instagram @misdar.k untuk dilakukan perbaikan.")
+                 })
             } else {
                 setStat('')
             }
@@ -47,11 +54,18 @@ export default function Search() {
     {
         hits.length === 0 ? 
         
-        <p className={loading ? css.stateloading : css.statestatus}>
+        <p className={
+        error ? css.servererror
+        : loading ? css.stateloading : css.statestatus
+        }>
+            
             {stat}
+            
+            {/*LOADING ICONS >>>*/}
             <div></div>
             <div></div>
             <div></div>
+            {/*<<<*/}
         </p> 
         
         : hits.map(e => {

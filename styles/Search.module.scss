@@ -53,9 +53,10 @@
 .stateloading {
     
     div {
-        background-color: black;
+        background-color: white;
+        border: 1px solid black;
         margin: 0 .4rem;
-        border-radius: .1rem;
+        border-radius: 0rem;
     }
     
     :nth-child(1) {
@@ -75,22 +76,27 @@
     
 }
 
+.servererror {
+    color: red;
+    text-align: center;
+}
+
 @keyframes popped1 {
-    0% {margin-top: 0;}
+    0% {margin-top: 0;background-color: black;}
     15% {margin-top: -10px;}
     30% {margin-top: 0px;}
     100% {margin-top: 0px;}
 }
 
 @keyframes popped2 {
-    31% {margin-top: 0px;}
+    31% {margin-top: 0;background-color: black;}
     45% {margin-top: -10px;}
     60% {margin-top: 0px;}
     100% {margin-top: 0px;}
 }
 
 @keyframes popped3 {
-    61% {margin-top: 0px;}
+    61% {margin-top: 0;background-color: black;}
     75% {margin-top: -10px;}
     100% {margin-top: 0px;}
 }
