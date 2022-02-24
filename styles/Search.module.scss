@@ -96,11 +96,11 @@
 }
 
 .cardwrapper {
+    position: relative;
     width: 90vw;
     margin: 1rem 5vw;
     padding: 0 1rem;
     border: 1px solid black;
-    border-bottom-right-radius: .3rem;
     font-family: Monospace;
     
     .cardcontent {
@@ -108,9 +108,29 @@
         font-size: 18px;
     }
     
+    .cardfooter {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.cardfooter {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 18px;width: 90%;
+    bottom: -5px;
+    
     .cardauthor {
-        position: absolute;
         background-color: lightgreen;
-        padding: 2px 5px 0 5px;
+        padding: 3px 15px;
+        border: 1px solid black;
+    }
+    
+    .cardquality {
+        background-color: lightblue;
+        padding: 3px 15px;
+        border: 1px solid black;
     }
 }

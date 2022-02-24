@@ -61,8 +61,12 @@ export default function Search() {
                 <h3>{e.judul}</h3>
                 <p className={css.cardcontent}>{e.content}</p>
                 <p>{e.desc}</p>
-                <i onClick={_ => setType(e.rawi)}
+                <div className={css.cardfooter}>
+                  <i onClick={_ => setType(e.rawi)}
                    className={css.cardauthor}>{e.rawi}</i>
+                  <p onClick={_ => setType(e.quality || '...')}
+                   className={css.cardquality}>{e.quality || '...'}</p>
+                </div>
                 <br />
             </div>)
         })

@@ -1,5 +1,4 @@
-import Add from './Add'
-import Search from './Search'
+import Search from '../addons/Search'
 
 export default function Home() {
   return (
